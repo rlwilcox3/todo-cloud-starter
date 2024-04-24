@@ -30,8 +30,8 @@ services:
 
   todo-elastic:
     container_name: todo-elastic
-    image: elasticsearch:6.6.1
-    ports:
+    image: elasticsearch:7.17.20
+    ports: 
       - 9200:9200
       - 9300:9300
     environment:

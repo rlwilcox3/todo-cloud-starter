@@ -8,7 +8,7 @@ const elasticClient = new elasticsearch.Client({
 });
 
 const TODO_SEARCH_INDEX_NAME = "todos";
-const TODO_SEARCH_INDEX_TYPE = "todo";
+const TODO_SEARCH_INDEX_TYPE = "_doc";
 
 // Ping the client to be sure Elastic is up
 elasticClient.ping({

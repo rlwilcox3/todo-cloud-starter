@@ -35,7 +35,7 @@ elasticClient.ping({
 // Set up the API routes ///////////////////////////////////////////////////////////////////////////////////////////////
 
 const TODO_SEARCH_INDEX_NAME = "todos";
-const TODO_SEARCH_INDEX_TYPE = "todo";
+const TODO_SEARCH_INDEX_TYPE = "_doc";
 
 // Search all todos
 app.route('/api/v1/search').post((req, res) => {
