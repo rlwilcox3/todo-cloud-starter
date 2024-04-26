@@ -40,7 +40,7 @@ app.route('/api/v1/todos').get( async (req, res) => {
         } else {
             console.log('Postgres client connected when getAllTodos');
 
-            client.query('SELECT title FROM todo', (error, todoRows) => {
+            client.query('SELECT title FROM todoDB', (error, todoRows) => {
                 if (error) {
                     throw error;
                 }

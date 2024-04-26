@@ -38,7 +38,7 @@ rabbitmq.connect(envProps.rabbitmqUrl, function(err, connection) {
                 } else {
                     console.log('Postgres client connected in AddTodo');
 
-                    client.query('INSERT INTO todo(title) VALUES($1)', [todoTitle], (error, reply) => {
+                    client.query('INSERT INTO todoDB(title) VALUES($1)', [todoTitle], (error, reply) => {
                         if (error) {
                             console.log('Could not add ' + todoTitle + "' to Database: " + error);
                         } else {
