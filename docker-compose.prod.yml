@@ -1,0 +1,53 @@
+services:
+  todo-postgres:
+    image: rlwilcox3/todo-postgres:1.0
+
+  todo-cache-ingestion:
+    build:
+      dockerfile: ../Dockerfile.nodejs.prod
+    image: rlwilcox3/todo-cache-ingestion:1.0
+    command: sh /home/node/app/start.sh
+
+  todo-cache-service:
+    build:
+      dockerfile: ../Dockerfile.nodejs.prod
+    image: rlwilcox3/todo-cache-service:1.0
+
+  todo-search-ingestion:
+    build:
+      dockerfile: ../Dockerfile.nodejs.prod
+    image: rlwilcox3/todo-search-ingestion:1.0
+    command: sh /home/node/app/start.sh
+
+  todo-search-service:
+    build:
+      dockerfile: ../Dockerfile.nodejs.prod
+    image: rlwilcox3/todo-search-service:1.0
+    command: sh /home/node/app/start.sh
+
+  todo-storage-ingestion:
+    build:
+      dockerfile: ../Dockerfile.nodejs.prod
+    image: rlwilcox3/todo-storage-ingestion:1.0
+    command: sh /home/node/app/start.sh
+
+  todo-storage-service:
+    build:
+      dockerfile: ../Dockerfile.nodejs.prod
+    image: rlwilcox3/todo-storage-service:1.0
+
+  todo-api-gateway:
+    build:
+      dockerfile: ../Dockerfile.nodejs.prod
+    image: rlwilcox3/todo-api-gateway:1.0
+    command: sh /home/node/app/start.sh
+
+  todo-view:
+    build:
+      dockerfile: Dockerfile.prod
+    image: rlwilcox3/todo-view:1.0
+    ports:
+      - 4201:8080
+
+  todo-proxy:
+    image: rlwilcox3/todo-proxy:1.0
