@@ -1,12 +1,5 @@
 {
     "AWSEBDockerrunVersion": 3,
     "containerDefinitions": [
-      {
-        "name": "todo-rabbitmq",
-        "image": "rabbitmq:3.12.13-management",
-        "hostname": "todo-rabbitmq",
-        "memory": 200,
-        "essential": false
-      }
     ]
 }
