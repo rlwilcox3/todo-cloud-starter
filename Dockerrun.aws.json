@@ -1,5 +1,5 @@
 {
-	"AWSEBDockerrunVersion": 3,
+	"AWSEBDockerrunVersion": 1,
 	"containerDefinitions": [{
 			"name": "todo-cache-service",
 			"image": "rlwilcox3/todo-cache-service:1.0",
