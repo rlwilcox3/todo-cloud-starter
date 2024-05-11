@@ -55,7 +55,7 @@ deploy:
   provider: elasticbeanstalk
   region: us-west-1
   app: Todo Application
-  env: TodoApplication-env-1
+  env: TodoApplication-env
   bucket_name: elasticbeanstalk-us-west-1-533267353433
   bucket_path: todo-app
   on:
