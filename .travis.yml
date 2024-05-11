@@ -54,7 +54,7 @@ after_success:
 deploy:
   provider: elasticbeanstalk
   region: us-west-1
-  app: Todo Application
+  app: TodoApplication
   env: TodoApplication-env
   bucket_name: elasticbeanstalk-us-west-1-533267353433
   bucket_path: todo-app
@@ -64,4 +64,3 @@ deploy:
   secret_access_key: $AWS_SECRET_KEY
   # secret_access_key:
   #   secure: $AWS_SECRET_KEY
-
