@@ -25,7 +25,39 @@
         "image": "rlwilcox3/todo-cache-service:1.0",
         "hostname": "todo-cache-service",
         "memory": 128,
-        "essential": true
+        "essential": false
+      }
+      ,
+      {
+        "name": "todo-search-ingestion",
+        "image": "rlwilcox3/todo-search-ingestion:1.0",
+        "hostname": "todo-search-ingestion",
+        "memory": 128,
+        "essential": false,
+        "links": ["todo-rabbitmq"],
+        "command": [
+          "sh",
+          "/home/node/app/start.sh"
+        ]
+      },
+      {
+        "name": "todo-search-service",
+        "image": "rlwilcox3/todo-search-service:1.0",
+        "hostname": "todo-search-service",
+        "memory": 128,
+        "essential": false
+      },
+      {
+        "name": "todo-storage-ingestion",
+        "image": "rlwilcox3/todo-storage-ingestion:1.0",
+        "hostname": "todo-storage-ingestion",
+        "memory": 128,
+        "essential": true,
+        "links": ["todo-rabbitmq"],
+        "command": [
+          "sh",
+          "/home/node/app/start.sh"
+        ]
       }
     ]
   }
