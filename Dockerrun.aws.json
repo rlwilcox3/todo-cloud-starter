@@ -14,7 +14,7 @@
         "hostname": "todo-cache-ingestion",
         "memory": 128,
         "essential": false,
-        "links": ["todo-rabbitmq", "todo-storage-service"],
+        "links": ["todo-rabbitmq"],
         "command": [
           "sh",
           "/home/node/app/start.sh"
@@ -28,55 +28,11 @@
         "essential": false
       },
       {
-        "name": "todo-search-ingestion",
-        "image": "rlwilcox3/todo-search-ingestion:1.0",
-        "hostname": "todo-search-ingestion",
-        "memory": 128,
-        "essential": false,
-        "links": ["todo-rabbitmq"],
-        "command": [
-          "sh",
-          "/home/node/app/start.sh"
-        ]
-      },
-      {
         "name": "todo-search-service",
         "image": "rlwilcox3/todo-search-service:1.0",
         "hostname": "todo-search-service",
         "memory": 128,
         "essential": false
-      },
-      {
-        "name": "todo-storage-ingestion",
-        "image": "rlwilcox3/todo-storage-ingestion:1.0",
-        "hostname": "todo-storage-ingestion",
-        "memory": 128,
-        "essential": false,
-        "links": ["todo-rabbitmq"],
-        "command": [
-          "sh",
-          "/home/node/app/start.sh"
-        ]
-      },
-      {
-        "name": "todo-storage-service",
-        "image": "rlwilcox3/todo-storage-service:1.0",
-        "hostname": "todo-storage-service",
-        "memory": 128,
-        "essential": false
-      },
-      {
-        "name": "todo-api-gateway",
-        "image": "rlwilcox3/todo-api-gateway:1.0",
-        "hostname": "todo-api-gateway",
-        "memory": 128,
-        "essential": false,
-        "command": [
-          "sh",
-          "/home/node/app/start.sh"
-        ],
-        "links": ["todo-rabbitmq", "todo-cache-service", "todo-cache-ingestion", "todo-search-service",
-          "todo-search-ingestion", "todo-storage-service", "todo-storage-ingestion"]
       },
       {
         "name": "todo-view",
@@ -96,7 +52,7 @@
             "hostPort": 80
           }
         ],
-        "links": ["todo-view", "todo-api-gateway"]
+        "links": ["todo-view"]
       }
     ]
   }
